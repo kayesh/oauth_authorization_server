@@ -44,19 +44,6 @@ public class AuthConfig extends AuthorizationServerConfigurerAdapter {
     endpoints.authenticationManager(authenticationManager)
              .tokenStore(tokenStore())
              .accessTokenConverter(converter());
-
-//    // enable cors for "/oauth/token"
-//    Map<String, CorsConfiguration> corsConfigMap = new HashMap<>();
-//    CorsConfiguration config = new CorsConfiguration();
-//    config.setAllowCredentials(true);
-//
-//    config.setAllowedOrigins(Collections.singletonList("*"));
-//    config.setAllowedMethods(Collections.singletonList("*"));
-//    config.setAllowedHeaders(Collections.singletonList("*"));
-//    corsConfigMap.put("/oauth/token", config);
-//    endpoints.getFrameworkEndpointHandlerMapping()
-//            .setCorsConfigurations(corsConfigMap);
-
   }
 
   @Bean
@@ -72,24 +59,4 @@ public class AuthConfig extends AuthorizationServerConfigurerAdapter {
 
     return c;
   }
-
-  @Override
-  public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-    security
-            .tokenKeyAccess("permitAll()")
-            .checkTokenAccess("isAuthenticated()");
-
-  }
-
-//  @Bean
-//  public CorsConfigurationSource corsConfigurationSource() {
-//    CorsConfiguration configuration = new CorsConfiguration();
-//    configuration.setAllowedOrigins(List.of("*"));
-//    configuration.addAllowedHeader("*");
-//    configuration.addAllowedMethod("*");
-//    configuration.setAllowCredentials(true);
-//    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//    source.registerCorsConfiguration("/**", configuration);
-//    return source;
-//  }
 }

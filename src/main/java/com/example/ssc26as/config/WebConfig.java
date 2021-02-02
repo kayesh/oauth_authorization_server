@@ -72,36 +72,4 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
       c.configurationSource(cs);
     });
   }
-
-//  @Override
-//  public void configure(WebSecurity web) throws Exception {
-//    web.ignoring()
-//            .antMatchers(HttpMethod.OPTIONS);
-//  }
-
-//  @Bean
-//  public FilterRegistrationBean corsFilter() {
-//    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//    CorsConfiguration config = new CorsConfiguration();
-//    config.setAllowCredentials(true);
-//    config.addAllowedOrigin("*");
-//    config.addAllowedHeader("*");
-//    config.addAllowedMethod("*");
-//    source.registerCorsConfiguration("/**", config);
-//    FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-//    bean.setOrder(0);
-//    return bean;
-//  }
-
-//  @Bean
-//  public CorsConfigurationSource corsConfigurationSource() {
-//    CorsConfiguration configuration = new CorsConfiguration();
-//    configuration.setAllowedOrigins(List.of("*"));
-//    configuration.addAllowedHeader("*");
-//    configuration.addAllowedMethod("*");
-//    configuration.setAllowCredentials(true);
-//    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//    source.registerCorsConfiguration("/**", configuration);
-//    return source;
-//  }
 }
